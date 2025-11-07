@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Responsive Image Page</title>
+    <style>
+        body {
+            background-color: gray;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Make the image responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Layout changes for larger screens */
+        @media (min-width: 768px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            img {
+                width: 300px;
+            }
+        }
+
+        /* Layout changes for smaller screens */
+        @media (max-width: 467px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1> this is an image</h1>
+    <br>
+    <img src="narasimha.png" alt="Lord Narasimha">
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classesDemo</title>
+</head>
+<body>
+    <script>
+        class Person
+        {
+            constructor(name,age)
+            {
+                this.name=name;
+                this.age=age;
+            }
+            getDetails()
+            {
+                console.log("name:"+this.name);
+                console.log("age:"+this.age);
+            }
+            getAge()
+            {
+                return this.age;
+            }
+            setAge(age)
+            {
+                this.age=age;
+                return this.age;
+            }
+        
+        }
+        class Student extends Person
+        {
+            constructor(name,age,grade)
+            {
+               super(name,age);
+                
+                this.grade=grade;
+            }
+            display()
+            {
+                console.log("name:"+this.name);
+                console.log("age:"+this.age);
+                console.log("grade"+this.grade);
+            }
+        }
+        let ob1=new Person("Anu",15);
+        ob1.getDetails();
+        ob1.setAge(26);
+        ob1.getAge();
+        ob1.getDetails();
+        let obj2=new Student("Balu",35,"A");
+        obj2.display();
+    </script>
+</body>
+</html>

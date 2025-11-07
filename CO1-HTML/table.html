@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Element Demo</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        table tbody{
+            text-align: center;
+            background-color:black);
+        }
+        th{
+            background-color:yellow;
+            color:black;
+        }
+        tfoot{
+            background-color: beige;
+        }
+        caption{
+        color:violet;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Result</h1>
+    <table border="1" align="center">
+        <thead>
+            <caption>
+                Student marks report
+            </caption>
+            <tr>
+                <th rowspan="2">S.ID</th>
+                <th rowspan="2">Name</th>
+                <th colspan="3">Marks</th>
+                <th rowspan="2">Total</th>
+                <th rowspan="2">Grade</th>
+            </tr>
+            <tr>
+                <th>Java</th>
+                <th>Python</th>
+                <th>Full Stack</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Gael</td>
+                <td>89</td>
+                <td>91</td>
+                <td>94</td>
+                <td>274</td>
+                <td>A+</td>
+            </tr>
+             <tr>
+                <td>2</td>
+                <td>Friede</td>
+                <td>98</td>
+                <td>96</td>
+                <td>93</td>
+                <td>287</td>
+                <td>A+</td>
+            </tr>
+             <tr>
+                <td>3</td>
+                <td>Sulyvahn</td>
+                <td>100</td>
+                <td>100</td>
+                <td>100</td>
+                <td>300</td>
+                <td>A+</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">Average</td>
+                <td colspan="1">287</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

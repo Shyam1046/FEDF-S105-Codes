@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f4f6f9;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      background: #a30000;
+      color: white;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+    .navbar ul li {
+      display: inline;
+    }
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 60px);
+      padding: 20px;
+    }
+
+    /* Card */
+    .form-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 380px;
+      text-align: center;
+    }
+    .form-card h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+    label {
+      text-align: left;
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    input:focus {
+      border-color: #007BFF;
+      box-shadow: 0 0 4px rgba(0,123,255,0.25);
+      outline: none;
+    }
+    .error {
+      color: #d9534f;
+      font-size: 13px;
+      margin: -10px 0 12px 0;
+      text-align: left;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #007BFF;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+      background: #a30000;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="logo">ERP System</div>
+    <ul>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="container">
+    <div class="form-card">
+      <h2>User Registration</h2>
+      <form id="myForm" onsubmit="return validateForm()">
+        
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username">
+        <div id="usernameError" class="error"></div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter email">
+        <div id="emailError" class="error"></div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <div id="passwordError" class="error"></div>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 ERP System. All Rights Reserved.
+  </footer>
+
+  <script>
+    function validateForm() {
+      let username = document.getElementById("username").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+
+      let usernameError = document.getElementById("usernameError");
+      let emailError = document.getElementById("emailError");
+      let passwordError = document.getElementById("passwordError");
+
+      usernameError.innerText = "";
+      emailError.innerText = "";
+      passwordError.innerText = "";
+
+      let isValid = true;
+
+      if (username === "") {
+        usernameError.innerText = "Username is required.";
+        isValid = false;
+      }
+
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (email === "") {
+        emailError.innerText = "Email is required.";
+        isValid = false;
+      } else if (!email.match(emailPattern)) {
+        emailError.innerText = "Enter a valid email address.";
+        isValid = false;
+      }
+
+      if (password === "") {
+        passwordError.innerText = "Password is required.";
+        isValid = false;
+      } else if (password.length < 6) {
+        passwordError.innerText = "Password must be at least 6 characters.";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERP Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f4f6f9;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      background: #a30000;
+      color: white;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar .logo {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+    .navbar ul li {
+      display: inline;
+    }
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navbar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 60px);
+      padding: 20px;
+    }
+
+    /* Card */
+    .form-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      width: 380px;
+      text-align: center;
+    }
+    .form-card h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+    label {
+      text-align: left;
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    input:focus {
+      border-color: #007BFF;
+      box-shadow: 0 0 4px rgba(0,123,255,0.25);
+      outline: none;
+    }
+    .error {
+      color: #d9534f;
+      font-size: 13px;
+      margin: -10px 0 12px 0;
+      text-align: left;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #007BFF;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+      background: #a30000;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="logo">ERP System</div>
+    <ul>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="container">
+    <div class="form-card">
+      <h2>User Registration</h2>
+      <form id="myForm" onsubmit="return validateForm()">
+        
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username">
+        <div id="usernameError" class="error"></div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter email">
+        <div id="emailError" class="error"></div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+        <div id="passwordError" class="error"></div>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 ERP System. All Rights Reserved.
+  </footer>
+
+  <script>
+    function validateForm() {
+      let username = document.getElementById("username").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+
+      let usernameError = document.getElementById("usernameError");
+      let emailError = document.getElementById("emailError");
+      let passwordError = document.getElementById("passwordError");
+
+      usernameError.innerText = "";
+      emailError.innerText = "";
+      passwordError.innerText = "";
+
+      let isValid = true;
+
+      if (username === "") {
+        usernameError.innerText = "Username is required.";
+        isValid = false;
+      }
+
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (email === "") {
+        emailError.innerText = "Email is required.";
+        isValid = false;
+      } else if (!email.match(emailPattern)) {
+        emailError.innerText = "Enter a valid email address.";
+        isValid = false;
+      }
+
+      if (password === "") {
+        passwordError.innerText = "Password is required.";
+        isValid = false;
+      } else if (password.length < 6) {
+        passwordError.innerText = "Password must be at least 6 characters.";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Demo</title>
+</head>
+<body>
+    <h1>Arrays Demo In JS</h1>
+    <p id="demo"></p>
+    <script>
+        let fruits = ["Banana", "Apple", "Mango", "Strawberry", "Grapes"];
+
+    document.getElementById("demo").innerHTML = "Array Elements are:<br>";
+    for (let i = 0; i < fruits.length; i++) {
+      document.getElementById("demo").innerHTML += fruits[i] + "<br>";
+    }
+    fruits.push("Kiwi");
+
+    document.getElementById("demo").innerHTML += "<br>Array Elements after adding:<br>";
+    for (let i = 0; i < fruits.length; i++) {
+      document.getElementById("demo").innerHTML += fruits[i] + "<br>";
+    }
+    fruits.pop();
+
+    document.getElementById("demo").innerHTML += "<br>Array Elements after deleting:<br>";
+    for (let i = 0; i < fruits.length; i++) {
+      document.getElementById("demo").innerHTML += fruits[i] + "<br>";
+    }
+    document.getElementById("demo").innerHTML += "<br>Array Elements using foreach with 'in' are:<br>";
+    for(let i in fruits){
+        document.getElementById("demo").innerHTML +=fruits[i] + "<br>";
+    }
+     document.getElementById("demo").innerHTML += "<br>Array Elements using foreach with 'of' are:<br>";
+    for(let i of fruits){
+        document.getElementById("demo").innerHTML +=fruits[i] + "<br>";
+    }
+    </script>
+</body>
+</html>

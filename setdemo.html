@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object demo</title>
+</head>
+<body>
+    <h1>object demo in js</h1>
+    <p id="demo"></p>
+    <script>
+        const Person={
+            name:"venky",
+            id:56,
+            gender:"Male",
+            marks:56,
+            f1()
+            {
+                return "hello:"+this.name;
+            }          
+           
+        };
+        document.getElementById("demo").innerHTML=Person.name+"<br/>";
+        document.getElementById("demo").innerHTML+=Person.id+"<br/>";
+        document.getElementById("demo").innerHTML+=Person.marks+"<br/>";
+        document.getElementById("demo").innerHTML+=Person.f1();
+
+
+    </script>
+    
+</body>
+</html>
